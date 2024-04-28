@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  overflow: hidden;
+
+}
+
+#map-container {
+    border: solid 2px black;
+    display: flex;
+    /* height: 100%; */
+    /* width: 100%; */
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    height: 75rem; 
+    width: 80%; 
+    top: 10%; 
+    left: 10%; 
+}
+
+#map { 
+    height: 100%;
+    width: 100%;
+    margin: auto auto;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #181a1b;
+      }
+}
