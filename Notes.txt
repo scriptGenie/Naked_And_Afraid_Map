@@ -1,3 +1,5 @@
+TODO - adjust favicon to 32px x 32px
+
 Location organization:
 
     Each location features several properties which will be used later for things like sorting and toggling display
