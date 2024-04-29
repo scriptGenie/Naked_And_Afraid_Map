@@ -1,0 +1,54 @@
+let openStreetMap_apikey = 'apikey=94dc031fdb7b43578ec0f13f8bdec48b' // delete this nephew
+let exampleLat = 39.952954
+let exampleLong = -1515.134559
+
+
+var map = L.map('map').setView([exampleLat, exampleLong], 13);
+
+var marker = L.marker([exampleLat, exampleLong]).addTo(map);
+
+marker.bindPopup("<b>Example Popup</b><br>I am a popup.").openPopup();
+
+var circle = L.circle([exampleLat, exampleLong], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map);
+
+circle.bindPopup("I am a circle.");
+
+// var polygon = L.polygon([
+//     [exampleLat, exampleLong],
+//     [exampleLat - 0.002, exampleLong - 0.02],
+//     [exampleLat - 0.019, exampleLong - 0.007]
+// ]).addTo(map);
+
+// polygon.bindPopup("I am a polygon.");
+
+// https://tile.openstreetmap.org/{z}/{x}/{y}.png
+
+var popup = L.popup()
+    // .setLatLng([exampleLat + 0.005, exampleLong + 0.0005])
+    // .setContent("I am a standalone popup.")
+    // .openOn(map);
+
+
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
+
+
+
+L.tileLayer(`https://tile.thunderforest.com/landscape/{z}/{x}/{y}{r}.png?${openStreetMap_apikey}`, {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href=""https://www.thunderforest.com/>ThunderForest</a>'
+}).addTo(map);
+
+

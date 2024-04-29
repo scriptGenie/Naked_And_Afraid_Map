@@ -1,0 +1,60 @@
+Location organization:
+
+    Each location features several properties which will be used later for things like sorting and toggling display
+        type - 'Feature'
+
+        properties: object
+            {
+                'name' - location name eg: 'Botswana'
+                'continent' - which continent this location resides eg: 'Africa'
+                'seasons' - array of ints eg: [3, 14]
+            }
+
+
+            geometry: object
+                type - mapbox point type, only used 'Point' so far
+                coordinates - an array containing [long, lat] (maddeningly)
+
+
+Points added with: 
+    map.on('load, () => {
+        map.addSource('points', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+
+                    // First Location
+                    // Africa
+                    // Nambia
+                    {
+                        'type': 'Feature',
+                        'properties': {'name': 'Nambia', 'continent': 'Africa', 'seasons': [3, 5, 6, 12]},
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [17.4861655, -21.25]
+                        }
+                    },
+                    // Template Location
+                    // Botswana
+                    {
+                        'type': 'Feature',
+                        'properties': {'name': 'Botswana', 'continent': 'Africa', 'seasons': [3, 14]},
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [24.680158000000006, -22.344029499999998]
+                        }
+                    },
+                    // Last Location
+                    {
+                        'type': 'Feature',
+                        'properties': {},
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': []
+                        }
+                    }
+                ]
+            }
+        });
+    })
