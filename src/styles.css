@@ -5,7 +5,7 @@ body { margin: 0; padding: 0; }
 #nav-bar-left {
     position: absolute;
     left: 5px;
-    top: 20%;
+    top: 15%;
     background-color: black;
     display: grid;
     grid-template-columns: 100%;
