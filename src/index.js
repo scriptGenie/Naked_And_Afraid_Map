@@ -739,11 +739,7 @@ document.getElementById('clear-all').addEventListener('click', function () {
     clearPoints();
 });
 
-// change this to get element by class for season buttons,
-//      then split the inner text into an array by '-'
-//          grab the number from the end of the array and use that to
-//              feed seasonPoints()
-
+// season buttons
 document.getElementById('season-one').addEventListener('click', function () {
     console.log('Button Season 1', this.id);
     seasonPoints(1);
