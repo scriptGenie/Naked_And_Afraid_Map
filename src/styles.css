@@ -1,3 +1,18 @@
 body { margin: 0; padding: 0; }
 
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+#nav-bar-left {
+    position: absolute;
+    left: 5px;
+    top: 20%;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 100%;
+    border: solid black 1px;    
+    border-radius: 15%;
+}
+
+.nav-bar-left-button {
+    margin: 5px;
+}
