@@ -65,28 +65,23 @@ function addLocations() {
     });
 }
 
-
-
-
 // TODO expand this to accept arrays, alternatively set each instance to toggle for layering
 function getSeason(num) {
-    
     let selectedFeatures = [];
 
     // this is for each region
-    featuresArray.forEach(region => {
+    featuresArray.forEach((region) => {
         // console.log('EACH REGION HERE')
         let seasonsArray = region.properties.seasons;
 
         if (seasonsArray.includes(num)) {
             selectedFeatures.push(region);
-            console.log('Pushed Feature: ', region.properties.name)
-        };
-    })
+            console.log('Pushed Feature: ', region.properties.name);
+        }
+    });
 
     return selectedFeatures;
-};
-
+}
 
 let currentSources = [];
 let currentLayers = [];
@@ -436,7 +431,6 @@ let featuresArray = [
         },
     },
 
-
     //THIS IS HERE TWICE - INVESTIGATE
     // United States
     {
@@ -572,10 +566,7 @@ let featuresArray = [
     },
 ];
 
-
-
 function seasonPoints(tempSeason) {
-
     clearPoints();
 
     map.addSource(`season-${tempSeason}-points`, {
@@ -642,12 +633,9 @@ function seasonPoints(tempSeason) {
         map.getCanvas().style.cursor = '';
     });
 
-    currentSources.push(`season-${tempSeason}-points`)
+    currentSources.push(`season-${tempSeason}-points`);
     currentLayers.push(`season-${tempSeason}-points-circle`);
 }
-
-
-
 
 // TODO check if source is already present before calling
 function defaultPoints() {
@@ -717,18 +705,16 @@ function defaultPoints() {
         map.getCanvas().style.cursor = '';
     });
 
-    currentSources.push('defaultPoints')
+    currentSources.push('defaultPoints');
     currentLayers.push('defaultPointsCircle');
 }
 
-
 function clearPoints() {
-
-    currentLayers.forEach(layer => {
+    currentLayers.forEach((layer) => {
         map.removeLayer(layer);
     });
 
-    currentSources.forEach(source => {
+    currentSources.forEach((source) => {
         map.removeSource(source);
     });
 
@@ -738,14 +724,11 @@ function clearPoints() {
 
 // currently restores default points (all)
 function restorePoints() {
-    
     defaultPoints();
 }
 
 spinGlobe();
 addLocations();
-
-
 
 // nav-bar-left EventListeners
 document.getElementById('restore-all').addEventListener('click', function () {
@@ -756,96 +739,102 @@ document.getElementById('clear-all').addEventListener('click', function () {
     clearPoints();
 });
 
-
-
 // change this to get element by class for season buttons,
 //      then split the inner text into an array by '-'
 //          grab the number from the end of the array and use that to
 //              feed seasonPoints()
 
 document.getElementById('season-one').addEventListener('click', function () {
-    console.log('Button Season 1', this.id)
+    console.log('Button Season 1', this.id);
     seasonPoints(1);
 });
 
 document.getElementById('season-two').addEventListener('click', function () {
-    console.log('Button Season 2', this.id)
+    console.log('Button Season 2', this.id);
     seasonPoints(2);
 });
 
 document.getElementById('season-three').addEventListener('click', function () {
-    console.log('Button Season 3', this.id)
+    console.log('Button Season 3', this.id);
     seasonPoints(3);
 });
 
 document.getElementById('season-four').addEventListener('click', function () {
-    console.log('Button Season 4', this.id)
+    console.log('Button Season 4', this.id);
     seasonPoints(4);
 });
 
 document.getElementById('season-five').addEventListener('click', function () {
-    console.log('Button Season 5', this.id)
+    console.log('Button Season 5', this.id);
     seasonPoints(5);
 });
 
 document.getElementById('season-six').addEventListener('click', function () {
-    console.log('Button Season 6', this.id)
+    console.log('Button Season 6', this.id);
     seasonPoints(6);
 });
 
 document.getElementById('season-seven').addEventListener('click', function () {
-    console.log('Button Season 7', this.id)
+    console.log('Button Season 7', this.id);
     seasonPoints(7);
 });
 
 document.getElementById('season-eight').addEventListener('click', function () {
-    console.log('Button Season 8', this.id)
+    console.log('Button Season 8', this.id);
     seasonPoints(8);
 });
 
 document.getElementById('season-nine').addEventListener('click', function () {
-    console.log('Button Season 9', this.id)
+    console.log('Button Season 9', this.id);
     seasonPoints(9);
 });
 
 document.getElementById('season-ten').addEventListener('click', function () {
-    console.log('Button Season 10', this.id)
+    console.log('Button Season 10', this.id);
     seasonPoints(10);
 });
 
 document.getElementById('season-eleven').addEventListener('click', function () {
-    console.log('Button Season 11', this.id)
+    console.log('Button Season 11', this.id);
     seasonPoints(11);
 });
 
 document.getElementById('season-twelve').addEventListener('click', function () {
-    console.log('Button Season 12', this.id)
+    console.log('Button Season 12', this.id);
     seasonPoints(12);
 });
 
-document.getElementById('season-thirteen').addEventListener('click', function () {
-    console.log('Button Season 13', this.id)
-    seasonPoints(13);
-});
+document
+    .getElementById('season-thirteen')
+    .addEventListener('click', function () {
+        console.log('Button Season 13', this.id);
+        seasonPoints(13);
+    });
 
-document.getElementById('season-fourteen').addEventListener('click', function () {
-    console.log('Button Season 14', this.id)
-    seasonPoints(14);
-});
+document
+    .getElementById('season-fourteen')
+    .addEventListener('click', function () {
+        console.log('Button Season 14', this.id);
+        seasonPoints(14);
+    });
 
-document.getElementById('season-fifteen').addEventListener('click', function () {
-    console.log('Button Season 15', this.id)
-    seasonPoints(15);
-});
+document
+    .getElementById('season-fifteen')
+    .addEventListener('click', function () {
+        console.log('Button Season 15', this.id);
+        seasonPoints(15);
+    });
 
-document.getElementById('season-sixteen').addEventListener('click', function () {
-    console.log('Button Season 16', this.id)
-    seasonPoints(16);
-});
+document
+    .getElementById('season-sixteen')
+    .addEventListener('click', function () {
+        console.log('Button Season 16', this.id);
+        seasonPoints(16);
+    });
 
-document.getElementById('season-seventeen').addEventListener('click', function () {
-    console.log('Button Season 17', this.id)
-    seasonPoints(17);
-});
-
-
+document
+    .getElementById('season-seventeen')
+    .addEventListener('click', function () {
+        console.log('Button Season 17', this.id);
+        seasonPoints(17);
+    });
